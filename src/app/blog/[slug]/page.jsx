@@ -1,27 +1,42 @@
 import Image from "next/image"
 import styles from "./singlePost.module.css"
+import { Suspense } from "react"
+import { getPost } from "@/lib/data"
+import PostUser from "@/components/postUser/postuser"
 
-const SinglePostPage = () => {
+export const generateMetadata = async ({params}) => {
+    const {slug} = params;
+    const post = await getPost(slug);
+    return {
+        title: post.title,
+        description: post.desc,
+    }
+}
+
+const SinglePostPage = async ({params}) => {
+    const {slug} = params;
+    const post = await getPost(slug);
+
     return (
         <div className={styles.container}>
-            <div className={styles.imgContainer}>
-                <Image src="/post.png" alt="post image" fill className={styles.img}/>
-            </div>
+            {post.img && <div className={styles.imgContainer}>
+                <Image src={post.img} alt="post image" fill className={styles.img}/>
+            </div>}
             <div className={styles.textContainer}>
-                <h1 className={styles.title}>Title</h1>
+                <h1 className={styles.title}>{post.title}</h1>
                 <div className={styles.detail}>
-                    <Image src="/avatar.png" alt="avatar image" width={50} height={50} className={styles.avatar}/>
-                    <div className={styles.detailText}>
-                        <span className={styles.detailTitle}>Author</span>
-                        <span className={styles.detailValue}>John Doe</span>
-                    </div>
+                    {post && (
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <PostUser userId={post.userId}/>
+                        </Suspense>
+                    )}
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Published</span>
-                        <span className={styles.detailValue}>01.01.2001</span>
+                        <span className={styles.detailValue}>{post.createdAt.toString().slice(4,16)}</span>
                     </div>
                 </div>
                 <div className={styles.content}>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint accusantium corrupti, tenetur praesentium rem perspiciatis fuga placeat, voluptates doloremque eveniet amet voluptatum tempora error vero maxime! Recusandae delectus eos quam.
+                    {post.desc}
                 </div>
             </div>
         </div>
