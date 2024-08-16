@@ -1,3 +1,9 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -31,7 +37,7 @@
     border: none;
     outline: none;
     background-color: var(--bgSoft);
-    color: var (--text);
+    color: var(--text);
 }
 
 .form button{
@@ -42,6 +48,19 @@
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.form button:hover{
+    background-color: hsl(34, 98%, 50%);
+}
+
+.title{
+    text-align: center;
+    gap: 10px;
+    font-size: 54px;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 768px){

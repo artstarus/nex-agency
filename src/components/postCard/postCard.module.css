@@ -9,10 +9,6 @@
     display: flex;
 }
 
-.bottom{
-
-}
-
 .imgContainer{
     width: 90%;
     height: 400px;
@@ -45,4 +41,5 @@
 
 .link{
     text-decoration: underline;
+    color: var(--btn)
 }

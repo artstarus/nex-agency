@@ -9,11 +9,11 @@ const PostCard = ({post}) => {
             {post.img && <div className={styles.imgContainer}>
                     <Image src={post.img} alt="post image" fill className={styles.img}/>
                 </div>}
-                <span className={styles.date}>01.01.2001</span>
+                { <span className={styles.date}>{post.createdAt?.toString().slice(0, 10)}</span> }
             </div>
-            <div className={styles.bottom}>
+            <div>
                 <h1 className={styles.title}>{post.title}</h1>
-                <p className={styles.desc}>{post.body}</p>
+                <p className={styles.desc}>{post.desc.slice(0, 100) + "..."}</p>
                 <Link className={styles.link} href={`/blog/${post.slug}`}>Read more...</Link>
             </div>
         </div>

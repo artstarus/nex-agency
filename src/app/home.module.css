@@ -23,17 +23,35 @@
     gap: 20px;
 }
 
-.button{
-    padding: 20px;
+.buttonAbout{
     min-width: 120px;
-    cursor: pointer;
+    padding: 20px;
     border: none;
     border-radius: 5px;
+    text-align: center;
+    background-color: var(--btn);
+    transition: background-color 0.25s ease;
+    font-weight: bold;
 }
 
-.button:first-child{
-    background-color: var(--btn);
-    color: var(--text);
+.buttonContact{
+    min-width: 120px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--text);
+    color: var(--bg);
+    transition: background-color 0.25s ease;
+    font-weight: bold;
+}
+
+.buttonAbout:hover{
+    background-color: hsl(34, 98%, 50%);
+}
+
+.buttonContact:hover{
+    background-color: hsl(0, 0%, 90%);
 }
 
 .brands{

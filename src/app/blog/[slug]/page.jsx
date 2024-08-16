@@ -13,9 +13,24 @@ export const generateMetadata = async ({params}) => {
     }
 }
 
+//fetch data with api
+const getData = async (slug) => {
+    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {next:{revalidate:3600}});
+    if  (!res.ok) {
+        throw new Error("Something went wrong.");
+    }
+    return res.json();
+}
+
+
 const SinglePostPage = async ({params}) => {
     const {slug} = params;
-    const post = await getPost(slug);
+
+    //fetch data with api
+    const post =  await getData(slug);
+
+    //fetch data without api
+    //const post = await getPost(slug);
 
     return (
         <div className={styles.container}>
@@ -32,7 +47,7 @@ const SinglePostPage = async ({params}) => {
                     )}
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Published</span>
-                        <span className={styles.detailValue}>{post.createdAt.toString().slice(4,16)}</span>
+                        <span className={styles.detailValue}>{post.createdAt.toString().slice(0,10)}</span>
                     </div>
                 </div>
                 <div className={styles.content}>

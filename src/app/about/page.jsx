@@ -10,7 +10,7 @@ const AboutPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.textContainer}>
-                <h2 className={styles.subtitle}>About Agency</h2>
+                <h2 className={styles.subtitle}><span style={{textDecoration: 'underline'}}>About NeX Agency</span></h2>
                 <h1 className={styles.title}>
                 We develop digital concepts that push <span style={{color: 'var(--btn)'}}>boundaries, </span>  
                 inspire <span style={{color: 'var(--btn)'}}>boldness, </span>
@@ -22,15 +22,15 @@ const AboutPage = () => {
                 </p>
                 <div className={styles.boxes}>
                     <div className={styles.box}>
-                        <h1>10+</h1>
+                        <h1>12+</h1>
                         <p>Years of experience</p>
                     </div>
                     <div className={styles.box}>
-                        <h1>575 K+</h1>
+                        <h1>16M+</h1>
                         <p>People reached</p>
                     </div>
                     <div className={styles.box}>
-                        <h1>4 K+</h1>
+                        <h1>4K+</h1>
                         <p>Services provided</p>
                     </div>
                 </div>

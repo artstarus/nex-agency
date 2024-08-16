@@ -1,0 +1,36 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+}
+
+.form input{
+    padding: 20px;
+    background-color: var(--bg);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+}
+
+.form button{
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--btn);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.25s ease;
+}
+
+.form button:hover{
+    background-color: hsl(34, 98%, 50%);
+}
+
+.login{
+    transition: color 0.25s ease;
+}
+.login:hover{
+    color: hsl(34, 98%, 50%);
+}
