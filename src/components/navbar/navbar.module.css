@@ -6,6 +6,10 @@
 }
 
 .logo{
-    font-size: 30px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid var(--btn);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }

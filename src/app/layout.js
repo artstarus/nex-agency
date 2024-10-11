@@ -11,6 +11,9 @@ export const metadata = {
     template: "%s | NeX Agency",
   },
   description: "A NeX level creative agency",
+  icons: [
+    { rel: 'icon', url: '/favicon.ico' }
+  ]
 };
 
 export default function RootLayout({ children }) {
