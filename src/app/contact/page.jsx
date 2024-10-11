@@ -14,7 +14,7 @@ const ContactPage = () => {
 
     return (
         <div className={styles.wrapper}>
-            <h1 className={styles.title}><span style={{color: 'var(--btn)'}}>Don't be shy! </span> <span style={{textDecoration: 'underline'}}>Message us.</span></h1>
+            <h1 className={styles.title}><span style={{color: 'var(--btn)'}}>Don&apos;t be shy! </span> <span style={{textDecoration: 'underline'}}>Message us.</span></h1>
             <div className={styles.container}>
                 <div className={styles.imgContainer}>
                     <Image src="/contact.png" alt="contact image" fill className={styles.img}/>

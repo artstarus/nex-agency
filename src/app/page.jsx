@@ -8,7 +8,7 @@ const Home = () => {
             <h1 className={styles.title}>Creative <span style={{ color: 'var(--btn)' }}>NeX-Level</span> Agency</h1>
             <p className={styles.desc}>We are thinkers, doers — and above all — <span style={{ color: 'var(--btn)' }}>builders.</span>
                 <br />
-                Creating <span style={{ color: 'var(--btn)' }}>innovative</span>, exceptional experiences that solve complex challenges for the world's biggest brands.</p>
+                Creating <span style={{ color: 'var(--btn)' }}>innovative</span>, exceptional experiences that solve complex challenges for the world&apos;s biggest brands.</p>
             <div className={styles.buttons}>
                 <Link className={styles.buttonAbout} href={"/about"}>Learn More</Link>
                 <Link className={styles.buttonContact} href={"/contact"}>Contact</Link>
