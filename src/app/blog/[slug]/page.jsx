@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from "./singlePost.module.css"
 import { Suspense } from "react"
 import { getPost } from "@/lib/data"
-import PostUser from "@/components/postUser/postuser"
+import PostUser from "@/components/postUser/postUser"
 
 export const generateMetadata = async ({params}) => {
     const {slug} = params;
